@@ -13,7 +13,7 @@ import {
   NavigationMenuTrigger,
   navigationMenuTriggerStyle,
 } from '@/components/ui/navigation-menu';
-import { GitlabIcon } from 'lucide-react';
+import { GithubIcon, GitlabIcon } from 'lucide-react';
 import Image from 'next/image';
 
 const tutorials: { title: string; href: string; description: string }[] = [
@@ -114,10 +114,10 @@ export function NavBar() {
           </NavigationMenuContent>
         </NavigationMenuItem>
         <NavigationMenuItem>
-          <Link href="/docs" legacyBehavior passHref>
+          <Link href="https://github.com/MolinDeng/cgai.gatech" legacyBehavior passHref>
             <NavigationMenuLink className={navigationMenuTriggerStyle()} target="_blank">
-              <GitlabIcon className="w-4 h-4 mr-2" />
-              Gitlab page
+              <GithubIcon className="w-4 h-4 mr-2" />
+              Github page
             </NavigationMenuLink>
           </Link>
         </NavigationMenuItem>
