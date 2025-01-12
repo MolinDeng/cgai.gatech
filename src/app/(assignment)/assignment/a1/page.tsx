@@ -7,18 +7,22 @@ import * as THREE from 'three';
 import vertexShader from '@/shaders/common/vertex.glsl';
 import fragmentShader from '@/shaders/uv-screen/fragment.glsl';
 
-const Mesh = ({ dpr }: { dpr: number }) => {
-  const { viewport } = useThree();
+const HW1 = ({ dpr }: { dpr: number }) => {
+  const { viewport, pointer } = useThree();
   const uniforms = useRef({
     uTime: { value: 0 },
     uResolution: {
       value: new THREE.Vector2(window.innerWidth * dpr, window.innerHeight * dpr),
     },
+    uFrame: { value: 0 },
+    uMouse: { value: new THREE.Vector2(0, 0) },
   }).current;
 
   useFrame((_, delta) => {
     uniforms.uTime.value += delta;
     uniforms.uResolution.value.set(window.innerWidth * dpr, window.innerHeight * dpr);
+    uniforms.uFrame.value += 1;
+    uniforms.uMouse.value.set(pointer.x, pointer.y);
   });
 
   return (
@@ -49,7 +53,7 @@ export default function TestPage() {
       }}
     >
       <Suspense fallback={null}>
-        <Mesh dpr={dpr} />
+        <HW1 dpr={dpr} />
       </Suspense>
     </Canvas>
   );

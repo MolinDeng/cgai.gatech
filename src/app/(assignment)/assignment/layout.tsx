@@ -1,6 +1,6 @@
 import Logo from '@/components/Logo';
 
-export default function TutorialLayout({
+export default function AssignmentLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;

@@ -3,7 +3,7 @@ import React from 'react';
 
 const Logo: React.FC = () => {
   return (
-    <div className="absolute top-4 left-4">
+    <div className="absolute top-4 left-4 z-10">
       <a
         className="font-[family-name:var(--font-geist-mono)] flex items-center justify-center gap-2 text-background"
         href="/"
