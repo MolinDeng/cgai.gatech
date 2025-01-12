@@ -54,9 +54,9 @@ const assignments: { title: string; href: string; description: string }[] = [
 
 const shaderToys: { title: string; href: string; description: string }[] = [
   {
-    title: 'Snail',
-    href: 'https://www.shadertoy.com/view/ld3Gz2',
-    description: 'An sdf snail made by Inigo Quilez',
+    title: 'Raymarching - Primitives ',
+    href: 'https://www.shadertoy.com/view/Xds3zN',
+    description: 'A set of raymarched primitives by Inigo Quilez',
   },
   {
     title: 'More...',
@@ -67,7 +67,7 @@ const shaderToys: { title: string; href: string; description: string }[] = [
 
 export function NavBar() {
   return (
-    <NavigationMenu >
+    <NavigationMenu>
       <NavigationMenuList>
         <NavigationMenuItem>
           <NavigationMenuTrigger>Tutorials</NavigationMenuTrigger>
@@ -102,11 +102,7 @@ export function NavBar() {
           <NavigationMenuContent>
             <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
               {shaderToys.map((item) => (
-                <ListItem
-                  key={item.title}
-                  title={item.title}
-                  href={item.href}
-                >
+                <ListItem key={item.title} title={item.title} href={item.href}>
                   {item.description}
                 </ListItem>
               ))}
@@ -115,15 +111,19 @@ export function NavBar() {
         </NavigationMenuItem>
         <NavigationMenuItem>
           <Link href="https://github.com/MolinDeng/cgai.gatech" legacyBehavior passHref>
-            <NavigationMenuLink className={navigationMenuTriggerStyle()} target="_blank">
+            <NavigationMenuLink className={navigationMenuTriggerStyle()}>
               <GithubIcon className="w-4 h-4 mr-2" />
               Github page
             </NavigationMenuLink>
           </Link>
         </NavigationMenuItem>
         <NavigationMenuItem>
-          <Link href="https://gatech.instructure.com/courses/448080" legacyBehavior passHref>
-            <NavigationMenuLink className={navigationMenuTriggerStyle()} target="_blank">
+          <Link
+            href="https://gatech.instructure.com/courses/448080"
+            legacyBehavior
+            passHref
+          >
+            <NavigationMenuLink className={navigationMenuTriggerStyle()}>
               <Image
                 className="mr-2 invert"
                 src="/cg4ai_logo3.png"
